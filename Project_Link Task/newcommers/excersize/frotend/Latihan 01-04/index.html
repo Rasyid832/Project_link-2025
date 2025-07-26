@@ -23,45 +23,55 @@
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 20px;
+      padding: 0;
       background-color: var(--background);
       color: var(--text);
       transition: background-color 0.4s, color 0.4s;
+      line-height: 1.6;
     }
 
     nav {
       text-align: center;
-      margin-bottom: 20px;
+      padding: 1rem;
+      background: #333;
+      color: white;
+      position: sticky;
+      top: 0;
+    }
+
+    nav button, nav input {
+      margin: 5px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
     }
 
     nav button {
-      margin: 0 10px;
-      padding: 8px 16px;
       background: var(--primary);
-      color: rgb(18, 15, 15);
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s;
+      color: #000;
     }
 
     nav button:hover {
       background: #1e154b;
+      color: white;
     }
 
     .container {
       max-width: 800px;
       margin: auto;
       text-align: center;
+      padding: 20px;
     }
 
     h1 {
-      color: var(--primary);
+      color:blue;
       margin-bottom: 10px;
     }
 
     .bio {
       margin: 10px 0 30px;
+      padding:16px;
     }
 
     .foto-pribadi {
@@ -95,7 +105,7 @@
     }
 
     .dark-toggle {
-      margin-top: 30px;
+      margin-top: 10px;
       padding: 10px 20px;
       background: var(--primary);
       color: #000000;
@@ -107,6 +117,7 @@
 
     .dark-toggle:hover {
       background: #654de4;
+      color: white;
     }
 
     #clock {
@@ -115,44 +126,151 @@
       color: var(--primary);
       font-weight: bold;
     }
+
+    /* HERO SECTION */
+    #hero {
+      text-align: center;
+      padding: 50px 20px;
+      background: #f4f4f4;
+    }
+
+    #hero h1 {
+      margin-bottom: 10px;
+    }
+
+    #ctaBtn {
+      padding: 10px 20px;
+      margin-top: 20px;
+      background: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    #ctaBtn:hover {
+      background: var(--primary);
+      color: #000;
+    }
+
+    /* FEATURES */
+    #features {
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .feature-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .feature {
+      background: #e2e2e2;
+      margin: 10px;
+      padding: 20px;
+      border-radius: 5px;
+      width: 200px;
+    }
+
+    /* CONTACT FORM */
+    #contact {
+      padding: 30px 20px;
+      background: #f9f9f9;
+      text-align: center;
+    }
+
+    #contact form input,
+    #contact form button {
+      display: block;
+      margin: 10px auto;
+      padding: 10px;
+      width: 80%;
+      max-width: 300px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #333;
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      .feature-list {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 <body>
   <nav>
-      <div style="margin-top: 20px;">
-         <input type="text" id="nameInput" placeholder="Masukkan nama Anda">
-         <button id="submitNameBtn">Kirim</button>
-         <p id="greeting"></p>
-      </div>
-    <button onclick="showHome()">Home</button>
-    <button onclick="showPerkenalan()">Perkenalan</button>
-    <button class="dark-toggle" onclick="toggleDarkMode()">Mode Gelap (walaupun dak gelap nian)</button>
+    <div>
+      <input type="text" id="nameInput" placeholder="Masukkan nama Anda">
+      <button id="submitNameBtn">Kirim</button>
+      <p id="greeting"></p>
+    </div>
+     <button onclick="showHome()">Home</button>
+     <button onclick="showPerkenalan()">Perkenalan</button>
+     <button class="dark-toggle" onclick="toggleDarkMode()">Mode Gelap</button>
   </nav>
 
   <div class="container" id="content">
-    <!-- Isi default: Home -->
     <h1>Selamat Datang!</h1>
-    <p>Cubo Tekan Tombol di Pocok Supayo Biso Ngenal Aku</p>
+    <p>ini adalah website penjualan jasa</p>
     <div id="clock"></div>
   </div>
 
+  <!-- HERO SECTION -->
+  <section id="hero">
+    <h1>Selamat Datang di Website Kami</h1>
+    <p>Tempat terbaik untuk belajar web development!</p>
+    <button id="ctaBtn">Daftar Sekarang</button>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <h2>Kenapa Memilih Kami?</h2>
+    <div class="feature-list">
+      <div class="feature">⭐ Mudah digunakan</div>
+      <div class="feature">⚡ Cepat & responsif</div>
+      <div class="feature">💡 Belajar sambil praktik</div>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section id="contact">
+    <h2>Kontak Kami</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Nama" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <button type="submit">Kirim</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    &blablablablablablablalablal.
+  </footer>
+
   <script>
-    function toggleDarkMode() {
+   function toggleDarkMode() {
       document.body.classList.toggle('dark-mode');
     }
 
-     document.getElementById("submitNameBtn").onclick = function() {
-            const nameInput = document.getElementById("nameInput");
-            const greetingElement = document.getElementById("greeting");
-            const name = nameInput.value;
+    document.getElementById("submitNameBtn").onclick = function() {
+      const nameInput = document.getElementById("nameInput");
+      const greetingElement = document.getElementById("greeting");
+      const name = nameInput.value;
 
-            if (name.trim() !== "") {
-                greetingElement.textContent = `Halo, ${name}! Selamat datang.`;
-                nameInput.value = ""; // Clear input after submission
-            } else {
-                greetingElement.textContent = "Mohon masukkan nama Anda.";
-            }
-        };
+      if (name.trim() !== "") {
+        greetingElement.textContent = `Halo, ${name}! Selamat datang.`;
+        nameInput.value = "";
+      } else {
+        greetingElement.textContent = "Mohon masukkan nama Anda.";
+      }
+    };
 
     function showHome() {
       document.getElementById('content').innerHTML = `
@@ -170,14 +288,9 @@
           Perkenalkan Saya <strong>Muhammad Rasyid Ridho Dari kelompok 3 Newcommers</strong><br>
           Saya adalah calon mahasiswa <strong>2025</strong> dari prodi <strong>Teknik Informatika Universitas Sriwijaya</strong><br>
         </p>
-        <img src="unsri2.png"class="foto-pribadi"/>
-        <p>
-        <a href="https://github.com/Rasyid832" target="_blank">Github Saya</a>
-        <div>
-          <a href="https://instagram.com/rsyidnd" target="_blank">instagram saya sekalian</a>
-        </div>
-       
-        
+        <img src="unsri2.png" class="foto-pribadi"/>
+        <p><a href="https://github.com/Rasyid832" target="_blank">Github Saya</a></p>
+        <p><a href="https://instagram.com/rsyiddho_" target="_blank">Instagram Saya</a></p>
 
         <table>
           <caption>HOBI SAYA</caption>
@@ -188,10 +301,10 @@
             <td>Ngetroll di ML</td>
           </tr>
           <tr>
-            <td>main piano</td>
-            <td>dengerin musik</td>
-            <td>melamun</td>
-            <td>ngeliatin orang lewat</td>
+            <td>Main piano</td>
+            <td>Dengerin musik</td>
+            <td>Melamun</td>
+            <td>Ngeliatin orang lewat</td>
           </tr>
         </table>
       `;
@@ -203,7 +316,6 @@
 
       function updateClock() {
         const now = new Date();
-
         const jam = now.getHours().toString().padStart(2, '0');
         const menit = now.getMinutes().toString().padStart(2, '0');
         const detik = now.getSeconds().toString().padStart(2, '0');
@@ -220,7 +332,7 @@
 
         clock.innerHTML = `
           <div>Jam Update : ${jam}:${menit}:${detik}</div>
-          <div> Date Update : ${hari}, ${tanggal} ${bulan} ${tahun}</div>
+          <div>Date Update : ${hari}, ${tanggal} ${bulan} ${tahun}</div>
         `;
       }
 
@@ -230,6 +342,24 @@
 
     // Jalankan clock pertama kali
     startClock();
+
+    // Tombol CTA scroll ke form
+    document.getElementById('ctaBtn').addEventListener('click', () => {
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Validasi form sederhana
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+
+      if (name === '' || email === '') {
+        alert('Harap isi semua field!');
+      } else {
+        alert(`Terima kasih, ${name}! Pesanmu sudah terkirim.`);
+      }
+    });
   </script>
 </body>
 </html>
