@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>F1 STORY – Photos</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+body{
+    height:100vh;
+    background:
+        linear-gradient(120deg, #0b0b0b 50%, #0a163a 50% 52%, #0b0b0b 52%),
+        radial-gradient(circle at top, #222, #000);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    overflow:hidden;
+}
+
+/* SPEED LINES */
+body::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background: repeating-linear-gradient(
+        135deg,
+        transparent,
+        transparent 22px,
+        rgba(255,255,255,0.03) 24px
+    );
+    pointer-events:none;
+}
+
+/* MAIN PANEL */
+.panel{
+    width:900px;
+    padding:40px;
+    background:rgba(15,15,15,0.95);
+    border-left:8px solid rgb(7,7,71);
+    box-shadow:0 0 40px rgba(7,7,71);
+    animation: enter 0.8s ease;
+}
+
+/* HEADER */
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.title{
+    font-weight:700;
+    letter-spacing:3px;
+}
+
+.subtitle{
+    font-size:0.8rem;
+    opacity:0.7;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+/* PHOTO CARD */
+.photo{
+    position:relative;
+    height:200px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,0.15);
+    cursor:pointer;
+}
+
+.photo::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgb(7,7,71);
+    opacity:0;
+    transition:0.3s;
+}
+
+.photo:hover::before{
+    opacity:0.4;
+}
+
+.photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.4s;
+}
+
+.photo:hover img{
+    transform:scale(1.08);
+}
+
+/* LABEL */
+.label{
+    position:absolute;
+    bottom:10px;
+    left:10px;
+    font-size:0.75rem;
+    letter-spacing:1px;
+    background:rgba(0,0,0,0.6);
+    padding:5px 10px;
+}
+
+/* BACK */
+.back{
+    margin-top:25px;
+    padding:15px;
+    border:1px solid rgba(255,255,255,0.2);
+    text-align:center;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.back:hover{
+    background:rgb(7,7,71);
+    box-shadow:0 0 20px rgba(7,7,71);
+}
+
+/* ANIM */
+@keyframes enter{
+    from{opacity:0; transform:translateX(-40px)}
+    to{opacity:1; transform:translateX(0)}
+}
+</style>
+</head>
+
+<body>
+
+<div class="panel">
+
+    <div class="header">
+        <div class="title">PHOTOS</div>
+        <div class="subtitle">PIT LANE MEMORIES</div>
+    </div>
+
+    <div class="grid">
+
+        <div class="photo">
+            <img src="https://images.unsplash.com/photo-1518544887878-6c2bbf28ee9a?auto=format&fit=crop&w=800&q=80">
+            <div class="label">LAP 1 – FIRST RACE</div>
+        </div>
+
+        <div class="photo">
+            <img src="https://images.unsplash.com/photo-15005355697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80">
+            <div class="label">LAP 2 – SPEED</div>
+        </div>
+
+        <div class="photo">
+            <img src="https://images.unsplash.com/photo-15296265594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80">
+            <div class="label">LAP 3 – MOMENTS</div>
+        </div>
+
+        <div class="photo">
+            <img src="https://images.unsplash.com/photo-15180811904-9c97fcb5a9f3?auto=format&fit=crop&w=800&q=80">
+            <div class="label">PIT STOP</div>
+        </div>
+
+        <div class="photo">
+            <img src="https://images.unsplash.com/photo-14947901077-be9c29b29330?auto=format&fit=crop&w=800&q=80">
+            <div class="label">TEAM</div>
+        </div>
+
+        <div class="photo">
+            <img src="https://images.unsplash.com/photo-15209747394-6c9f47fa1f48?auto=format&fit=crop&w=800&q=80">
+            <div class="label">FINAL LAP</div>
+        </div>
+
+    </div>
+
+    <div class="back" onclick="back()">
+        ← RETURN TO GARAGE
+    </div>
+
+</div>
+
+<script>
+function back(){
+    document.body.style.opacity = 0;
+    setTimeout(()=> location.href = "menu.html", 400);
+}
+</script>
+
+</body>
+</html>

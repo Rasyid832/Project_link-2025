@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>START</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body{
+    height:100vh;
+    background: radial-gradient(circle at top, #1c1c1c, #000);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    cursor: crosshair;
+}
+
+/* container */
+.menu{
+    text-align:center;
+    animation: fadeIn 1s ease;
+}
+
+/* title */
+.menu h1{
+    font-size:3.2rem;
+    letter-spacing:6px;
+    margin-bottom:10px;
+}
+
+.menu p{
+    font-size:0.9rem;
+    opacity:0.6;
+    margin-bottom:40px;
+}
+
+/* button */
+.menu button{
+    background:none;
+    border:2px solid #fff;
+    color:#fff;
+    padding:14px 60px;
+    font-size:1rem;
+    letter-spacing:4px;
+    cursor:pointer;
+    transition:0.25s;
+}
+
+.menu button:hover{
+    background:#fff;
+    color:#000;
+}
+
+/* subtle scanline */
+.scanline{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.03),
+        rgba(255,255,255,0.03) 1px,
+        transparent 2px,
+        transparent 4px
+    );
+    pointer-events:none;
+}
+
+/* animation */
+@keyframes fadeIn{
+    from{opacity:0}
+    to{opacity:1}
+}
+</style>
+</head>
+
+<body>
+
+<div class="menu">
+    <h1>Aciiiid & Iraaaa</h1>
+    <p>press start</p>
+    <button onclick="startGame()">START</button>
+</div>
+
+<div class="scanline"></div>
+
+<script>
+
+function startGame(){
+    document.body.style.transition = "0.5s";
+    document.body.style.opacity = "0";
+
+    setTimeout(()=>{
+        window.location.href = "menu.html";
+    }, 500);
+}
+</script>
+
+
+
+</body>
+</html>

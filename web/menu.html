@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>F1 STORY MODE</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+body{
+    height:100vh;
+    background:
+        linear-gradient(115deg, #0b0b0b 45%, #e10600 45% 47%, #0b0b0b 47%),
+        radial-gradient(circle at top, #222, #000);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    overflow:hidden;
+}
+
+/* SPEED LINES */
+body::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background: repeating-linear-gradient(
+        135deg,
+        transparent,
+        transparent 18px,
+        rgba(255,255,255,0.04) 20px
+    );
+    pointer-events:none;
+}
+
+/* MAIN PANEL */
+.panel{
+    position:relative;
+    width:520px;
+    padding:40px 45px;
+    background:rgba(15,15,15,0.94);
+    border-left:8px solid rgb(7, 7, 71);
+    box-shadow:
+        0 0 40px rgba(7,7,71),
+        inset 0 0 15px rgba(255,255,255,0.05);
+    animation: enter 0.8s ease;
+}
+
+/* TOP BAR */
+.top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.logo{
+    font-weight:700;
+    letter-spacing:4px;
+}
+
+.mode{
+    font-size:0.8rem;
+    opacity:0.7;
+}
+
+/* MENU */
+.menu-item{
+    position:relative;
+    padding:18px 22px;
+    margin:16px 0;
+    border:1px solid rgba(255,255,255,0.18);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    cursor:pointer;
+    transition:0.25s;
+    overflow:hidden;
+}
+
+.menu-item::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgb(7, 7, 71);
+    transform:translateX(-100%);
+    transition:0.25s;
+    z-index:-1;
+}
+
+.menu-item:hover::before{
+    transform:translateX(0);
+}
+
+.menu-item:hover{
+    box-shadow:0 0 25px rgba(7,7,71);
+}
+
+.menu-item span{
+    font-size:0.75rem;
+    opacity:0.7;
+}
+
+/* PROGRESS */
+.progress{
+    margin-top:30px;
+}
+
+.progress label{
+    font-size:0.75rem;
+    opacity:0.6;
+}
+
+.bar{
+    margin-top:6px;
+    height:6px;
+    background:rgba(255,255,255,0.15);
+}
+
+.fill{
+    width:40%;
+    height:100%;
+    background:rgb(9, 9, 72);
+}
+
+/* FOOTER HUD */
+.footer{
+    margin-top:25px;
+    font-size:0.75rem;
+    opacity:0.65;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    row-gap:6px;
+}
+
+/* ANIM */
+@keyframes enter{
+    from{opacity:0; transform:translateX(-40px)}
+    to{opacity:1; transform:translateX(0)}
+}
+</style>
+</head>
+
+<body>
+
+<div class="panel">
+    <div class="top">
+        <div class="logo">F1 STORY</div>
+        <div class="mode">STORY MODE</div>
+    </div>
+
+    <div class="menu-item" onclick="go('aboutus.html')">
+        ABOUT US
+        <span>01</span>
+    </div>
+
+    <div class="menu-item" onclick="go('photo.html')">
+        PHOTOS
+        <span>02</span>
+    </div>
+
+    <div class="progress">
+        <label>STORY PROGRESS</label>
+        <div class="bar">
+            <div class="fill"></div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div>1st Driver : ACIIIID</div>
+        <div>2nd Driver : IRAAAA</div>
+        <div>TRACK : OUR JOURNEY</div>
+        <div>LAP : 1 / 5</div>
+    </div>
+</div>
+
+<script>
+function go(page){
+    document.body.style.opacity = 0;
+    setTimeout(()=> location.href = page, 400);
+}
+</script>
+
+</body>
+</html>
