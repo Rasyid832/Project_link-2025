@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>F1 STORY – Favorite Music</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+body{
+    height:100vh;
+    background:url("https://jornaleconomico.sapo.pt/wp-content/themes/yootheme/cache/63/red-bull-racings-dutch-driver-max-verstappen-steers-his-car-news-photo-1659046839-scaled-e1706204567591-63e5a231.jpeg") center/cover no-repeat fixed;
+    overflow:hidden;
+}
+
+body::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.7);
+}
+
+/* HUD */
+.topbar{
+    position:absolute;
+    top:20px;
+    left:30px;
+    right:30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:2;
+    color:white;
+}
+
+.title{
+    font-size:26px;
+    font-weight:700;
+    letter-spacing:3px;
+}
+
+.mode{
+    background:#ff2a6d;
+    padding:10px 25px;
+    border-radius:30px;
+    font-weight:600;
+}
+
+/* MUSIC PANEL */
+.music{
+    position:absolute;
+    right:50px;
+    top:120px;
+    width:500px;
+    background:rgba(15,15,15,0.85);
+    border-left:6px solid #ff2a6d;
+    padding:30px;
+    color:white;
+    z-index:2;
+    animation:slide 0.8s ease;
+}
+
+.music h2{
+    letter-spacing:3px;
+    margin-bottom:15px;
+}
+
+.track{
+    border:1px solid rgba(255,255,255,0.2);
+    padding:15px;
+    margin-bottom:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.track:hover{
+    background:#ff2a6d;
+    box-shadow:0 0 20px #ff2a6d;
+}
+
+.track span{
+    font-size:0.8rem;
+    opacity:0.8;
+}
+
+/* LEFT MENU */
+.menu{
+    position:absolute;
+    top:120px;
+    left:40px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    z-index:2;
+}
+
+.btn{
+    width:260px;
+    padding:18px 25px;
+    background:linear-gradient(90deg,#1c1c1c,#2b2b2b);
+    border-left:6px solid #0aa2ff;
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#0aa2ff;
+    box-shadow:0 0 20px #0aa2ff;
+}
+
+/* BACK */
+.back{
+    position:absolute;
+    bottom:30px;
+    right:50px;
+    background:#0aa2ff;
+    padding:15px 40px;
+    font-weight:700;
+    cursor:pointer;
+    z-index:2;
+    color:white;
+}
+
+.back:hover{
+    background:#ff2a6d;
+    box-shadow:0 0 20px #ff2a6d;
+}
+
+@keyframes slide{
+    from{opacity:0; transform:translateX(40px)}
+    to{opacity:1; transform:translateX(0)}
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+    <div class="title">FAVORITE MUSIC</div>
+    <div class="mode">MUSIC MODE</div>
+</div>
+
+<div class="menu">
+    <div class="btn">PLAYLIST</div>
+    <div class="btn">LO-FI</div>
+    <div class="btn">POP</div>
+    <div class="btn">HYPER RACING</div>
+</div>
+
+<div class="music">
+    <h2>TRACK LIST</h2>
+
+    <div class="track">
+        Night Drive
+        <span>02:41</span>
+    </div>
+
+    <div class="track">
+        Lonely Road
+        <span>03:12</span>
+    </div>
+
+    <div class="track">
+        Faster Than Time
+        <span>02:58</span>
+    </div>
+
+    <div class="track">
+        After Midnight
+        <span>03:44</span>
+    </div>
+
+    <div class="track">
+        Our Last Lap
+        <span>04:05</span>
+    </div>
+</div>
+
+<div class="back" onclick="location.href='menu.html'">
+    BACK
+</div>
+
+</body>
+</html>
